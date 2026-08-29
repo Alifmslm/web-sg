@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { RESULTS } from "@/data/results";
+import { CERTIFICATES } from "@/data/certificates";
 import { Search } from "lucide-react";
 
-export function AnnouncementCheck() {
+export function CertificateChecker() {
   const [nim, setNim] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
@@ -16,28 +16,28 @@ export function AnnouncementCheck() {
     const trimmedNim = nim.trim();
     if (!trimmedNim) return;
 
-    const found = RESULTS.find((r) => r.nim.trim() === trimmedNim);
+    const found = CERTIFICATES.find((r) => r.nim.trim() === trimmedNim);
     if (found) {
       router.push(`/announcement?nim=${encodeURIComponent(trimmedNim)}`);
     } else {
-      setError("Data not found, please double-check your NIM.");
+      setError("Certificate not found. Please double-check your NIM.");
     }
   };
 
   return (
-    <section className="py-12">
+    <section id="certificate" className="scroll-mt-[250px] py-12">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 sm:gap-12">
             <div className="h-px min-w-[20px] flex-1 bg-gray-300"></div>
             <h2 className="text-xl font-bold tracking-tight text-[#1C1629] sm:text-4xl text-center">
-              Study Group Announcement
+              Certificate Checker
             </h2>
             <div className="h-px min-w-[20px] flex-1 bg-gray-300"></div>
           </div>
           <p className="mt-4 text-center text-lg text-muted-foreground">
-            Check your acceptance status by entering your details below.
+            Look up and download your certificate by entering your NIM below.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export function AnnouncementCheck() {
               className="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#6366f1] to-[#a855f7] px-4 py-3 font-semibold text-white shadow-lg shadow-purple-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/40 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-purple-500/20 disabled:pointer-events-none disabled:opacity-50"
             >
               <Search className="h-5 w-5" />
-              Check Status
+              Search Certificate
             </button>
           </form>
         </div>

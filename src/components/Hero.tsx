@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MousePointer2, X } from "lucide-react";
+import { MousePointer2, X, Award } from "lucide-react";
 // import Link from "next/link";
 
 // ✅ To re-enable registration, uncomment the Link import above,
@@ -34,7 +34,7 @@ export function Hero() {
           </p>
 
           {/* Register Button - Currently Disabled */}
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
             <button
               type="button"
               onClick={handleClick}
@@ -45,6 +45,14 @@ export function Hero() {
                 <span>Register Study Group</span>
               </div>
             </button>
+
+            <a
+              href="#certificate"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/20 px-6 py-3 text-base font-semibold text-primary transition-all hover:scale-105 hover:border-primary/40 hover:bg-primary/5 active:scale-95 sm:min-w-[200px]"
+            >
+              <Award className="h-5 w-5" />
+              <span>Get Certificate</span>
+            </a>
           </div>
 
           {/* Toast Notification */}
