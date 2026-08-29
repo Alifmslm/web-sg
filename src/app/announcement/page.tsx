@@ -23,6 +23,9 @@ function CertificateResult() {
   useEffect(() => {
     if (!student) return;
 
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
     const duration = 2000;
     const end = Date.now() + duration;
 
@@ -47,7 +50,6 @@ function CertificateResult() {
       }
     };
 
-    // Initial burst
     confetti({
       particleCount: 80,
       spread: 100,
@@ -55,7 +57,6 @@ function CertificateResult() {
       colors: ["#6366f1", "#a855f7", "#00d97a"],
     });
 
-    // Side cannons
     frame();
   }, [student]);
 
@@ -82,7 +83,7 @@ function CertificateResult() {
             </p>
             <Link
               href="/#certificate"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-all hover:border-primary/40 hover:bg-primary/5"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-all duration-200 ease-out hover:border-primary/40 hover:bg-primary/5 active:scale-95"
             >
               <ArrowLeft className="h-4 w-4" />
               Try Again
@@ -96,17 +97,17 @@ function CertificateResult() {
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 pb-12 pt-24 sm:px-6 sm:pt-32 md:px-12">
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
-        <div className="flex w-full flex-col items-center animate-fade-in-up space-y-6">
+        <div className="flex w-full flex-col items-center space-y-6">
 
           {/* Icon */}
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-[#6366f1] to-[#a855f7] shadow-lg shadow-purple-500/30">
+          <div className="animate-fade-in-up stagger-0 flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-[#6366f1] to-[#a855f7] shadow-lg shadow-purple-500/30">
             <Award className="h-10 w-10 text-white" />
           </div>
 
           {/* Congratulatory Text */}
-          <div className="text-center space-y-2 max-w-3xl px-4">
+          <div className="animate-fade-in-up stagger-1 text-center space-y-2 max-w-3xl px-4">
             <h1 className="text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl md:text-5xl">
-              Congratulations, {student.name.split(" ")[0]}!
+              Congratulations, {student.name}!
             </h1>
             <p className="text-lg text-muted-foreground">
               NIM: <span className="font-mono font-semibold text-foreground">{student.nim}</span>
@@ -119,17 +120,18 @@ function CertificateResult() {
           </div>
 
           {/* Certificate Buttons */}
-          <div className="flex flex-col items-center gap-3 mt-2">
+          <div className="animate-fade-in-up stagger-2 flex flex-col items-center gap-3 mt-2">
             <p className="text-sm font-medium text-muted-foreground">
               Your Certificate{student.certificates.length > 1 ? "s" : ""}
             </p>
-            {student.certificates.map((cert) => (
+            {student.certificates.map((cert, i) => (
               <a
                 key={cert.title}
                 href={cert.notion_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow-md sm:min-w-[280px] sm:px-8 sm:py-3.5 sm:text-base bg-linear-to-r from-[#6366f1] to-[#a855f7] hover:brightness-110 shadow-purple-500/30 hover:shadow-purple-500/40"
+                className="animate-fade-in-up inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform duration-160 ease-out transition-shadow duration-200 ease-out hover:-translate-y-0.5 shadow-sm hover:shadow-md sm:min-w-[280px] sm:px-8 sm:py-3.5 sm:text-base bg-linear-to-r from-[#6366f1] to-[#a855f7] hover:brightness-110 shadow-purple-500/30 hover:shadow-purple-500/40 active:scale-[0.97]"
+                style={{ animationDelay: `${(i + 3) * 60}ms` }}
               >
                 <Download className="h-5 w-5" />
                 {cert.title}
@@ -140,7 +142,7 @@ function CertificateResult() {
           {/* Back Link */}
           <Link
             href="/#certificate"
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-all hover:border-primary/40 hover:bg-primary/5 mt-4"
+            className="animate-fade-in-up stagger-5 inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/20 px-6 py-3 text-sm font-semibold text-primary transition-all duration-200 ease-out hover:border-primary/40 hover:bg-primary/5 active:scale-95 mt-4"
           >
             <ArrowLeft className="h-4 w-4" />
             Search Another NIM
