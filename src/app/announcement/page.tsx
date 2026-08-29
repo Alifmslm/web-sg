@@ -107,7 +107,8 @@ function CertificateResult() {
           {/* Congratulatory Text */}
           <div className="animate-fade-in-up stagger-1 text-center space-y-2 max-w-3xl px-4">
             <h1 className="text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl md:text-5xl">
-              Congratulations, {student.name}!
+              Congratulations<br />
+              {student.name}!
             </h1>
             <p className="text-lg text-muted-foreground">
               NIM: <span className="font-mono font-semibold text-foreground">{student.nim}</span>
