@@ -311,7 +311,7 @@ export const CERTIFICATES: StudentCertificate[] = [
     certificates: [
       {
         title: "Certificate of Completion",
-        notion_link: "https://file.notion.com/f/f/6b576ac1-a1a3-4651-a5b7-4bcca487b674/ae923450-62ba-4bc0-a00f-5f9e5485ba9e/Peserta_Putri_Tania_Adelfianti.pdf?table=block&id=3cb3861b-1530-809a-96c7-fb483279b450&spaceId=6b576ac1-a1a3-4651-a5b7-4bcca487b674&expirationTimestamp=1788048000000&signature=3Bk3CbJsMAwzEyo28HJ_-1u6ymn3iKqDIFK-9bh7UYE&downloadName=Peserta_Putri+Tania+Adelfianti.pdf",
+        notion_link: "https://file.notion.com/f/f/6b576ac1-a1a3-4651-a5b7-4bcca487b674/a790778a-6ae1-42e6-9350-e70e4614b060/Peserta_Daffa_Wishnuhimaru_Majid.pdf?table=block&id=3cb3861b-1530-809a-96c7-fb483279b450&spaceId=6b576ac1-a1a3-4651-a5b7-4bcca487b674&expirationTimestamp=1788091200000&signature=nr-tQ4FjxT3QtXeh76U2nbVfa5AIo8yxf-EMwpkTicM&downloadName=Peserta_Daffa+Wishnuhimaru+Majid.pdf",
       },
       {
         title: "Team Achievement Certificate",
