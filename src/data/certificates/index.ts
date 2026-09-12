@@ -263,7 +263,7 @@ export const CERTIFICATES: StudentCertificate[] = [
     certificates: [
       {
         title: "Certificate of Completion",
-        drive_link: "https://drive.google.com/file/d/1voJVCl_t_3qPT6M2snauIRgtEYXF385K/view",
+        drive_link: "https://drive.google.com/file/d/1O9dXIHuBHARxAUWhap_nCq-cU1cx482E/view",
       },
       {
         title: "Team Achievement Certificate",
@@ -311,7 +311,7 @@ export const CERTIFICATES: StudentCertificate[] = [
     certificates: [
       {
         title: "Certificate of Completion",
-        drive_link: "https://drive.google.com/file/d/1Haue3BwkbLMWe92AvGINcwfjD5te8IIP/view?usp=sharing",
+        drive_link: "https://drive.google.com/file/d/1oaDzm2w2gxKNW1X2WBfhaTRlelE_bUJ1/view",
       },
       {
         title: "Team Achievement Certificate",
